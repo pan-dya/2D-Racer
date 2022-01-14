@@ -61,8 +61,12 @@ class Car:
 
     # moving functions to move forward and backward
     def moving(self):
-        self.speed = min(self.speed + self.acceleration, self.maxSpeed)
-        self.move()
+         if self.speed >= self.maxSpeed:
+            self.speed == self.maxSpeed
+            self.move()
+        if self.speed < self.maxSpeed:
+            self.speed += self.acceleration
+            self.move()
     
     def movingBack(self):
         self.speed = max(self.speed - self.acceleration, -self.maxSpeed/2)
